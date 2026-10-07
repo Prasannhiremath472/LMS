@@ -1,0 +1,84 @@
+/*
+ * Design tokens for the LMS product shell.
+ * Deliberately brand-neutral (not tied to any specific client) so this file is the
+ * single place to reskin per client: swap --color-brand-* and --color-accent-* only.
+ */
+
+@theme {
+  /* Brand — deep indigo, trustworthy/ed-tech without being generic Bootstrap blue */
+  --color-brand-50: #eef1fd;
+  --color-brand-100: #dde3fb;
+  --color-brand-200: #b8c4f6;
+  --color-brand-300: #8fa0f0;
+  --color-brand-400: #6478e8;
+  --color-brand-500: #4353dd;
+  --color-brand-600: #333fc0;
+  --color-brand-700: #29329b;
+  --color-brand-800: #232a7a;
+  --color-brand-900: #1e2361;
+  --color-brand-950: #12153b;
+
+  /* Accent — warm amber, used sparingly for highlights/CTAs against the cool brand color */
+  --color-accent-50: #fef8ec;
+  --color-accent-100: #fcecc8;
+  --color-accent-400: #f3b23e;
+  --color-accent-500: #e89a1c;
+  --color-accent-600: #c67c12;
+
+  /* Semantic */
+  --color-success-50: #ecfaf3;
+  --color-success-500: #1fa971;
+  --color-success-600: #178a5c;
+  --color-warning-50: #fef6ec;
+  --color-warning-500: #e0912b;
+  --color-warning-600: #bb7418;
+  --color-danger-50: #fdeeee;
+  --color-danger-500: #d8433c;
+  --color-danger-600: #b6332d;
+
+  /* Neutrals — warm-tinted gray (not pure slate) for a designed, non-default feel */
+  --color-ink-50: #f7f7f8;
+  --color-ink-100: #ececef;
+  --color-ink-200: #d9d9df;
+  --color-ink-300: #b8b9c4;
+  --color-ink-400: #9294a3;
+  --color-ink-500: #71738a;
+  --color-ink-600: #575971;
+  --color-ink-700: #43445a;
+  --color-ink-800: #2c2d3d;
+  --color-ink-900: #1c1d29;
+  --color-ink-950: #101019;
+
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --shadow-card: 0 1px 2px 0 rgb(28 29 41 / 0.04), 0 1px 3px 0 rgb(28 29 41 / 0.06);
+  --shadow-popover: 0 4px 6px -1px rgb(28 29 41 / 0.08), 0 10px 15px -3px rgb(28 29 41 / 0.08);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Surface tokens: consumed directly (bg-surface, text-ink, etc.) rather than choosing
+   slate-50 vs slate-950 per component, so light/dark switches from one place. */
+:root {
+  --color-surface: white;
+  --color-surface-raised: white;
+  --color-surface-sunken: var(--color-ink-50);
+  --color-border: var(--color-ink-200);
+  --color-text: var(--color-ink-800);
+  --color-text-muted: var(--color-ink-500);
+  --color-text-heading: var(--color-ink-950);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: var(--color-ink-900);
+    --color-surface-raised: var(--color-ink-800);
+    --color-surface-sunken: var(--color-ink-950);
+    --color-border: var(--color-ink-700);
+    --color-text: var(--color-ink-200);
+    --color-text-muted: var(--color-ink-400);
+    --color-text-heading: white;
+  }
+}
